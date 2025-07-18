@@ -1,0 +1,25 @@
+@baseUrl = http://localhost:5177
+
+### Get all Posts
+GET {{baseUrl}}/odata/Posts
+
+### Get all Tags
+GET {{baseUrl}}/odata/Tags
+
+### Get Posts with Tags expanded
+GET {{baseUrl}}/odata/Posts?$expand=Tags
+
+### Get Tags with Posts expanded
+GET {{baseUrl}}/odata/Tags?$expand=Posts
+
+### Get a specific Post by ID and expand Tags
+GET {{baseUrl}}/odata/Posts(1)?$expand=Tags
+
+### Get a specific Tag by ID and expand Posts
+GET {{baseUrl}}/odata/Tags(1)?$expand=Posts
+
+### Filter Posts by Title and expand Tags
+GET {{baseUrl}}/odata/Posts?$filter=contains(Title, 'C%23')&$expand=Tags#')
+
+### Select specific fields from Tags and expand Posts
+GET {{baseUrl}}/odata/Tags?$select=Id,Name&$expand=Posts
